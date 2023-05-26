@@ -17,7 +17,7 @@ const io = require("socket.io")(8000, {
   const removeUser = (socketId) => {
     users = users.filter((user) => user.socketId !== socketId);
   };
-  
+   
   // Function to get user details based on userId
   const getUser = (userId) => {
     return users.find((user) => user.userId === userId);
