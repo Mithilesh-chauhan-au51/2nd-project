@@ -6,11 +6,11 @@ const io = require("socket.io")(8000, {
   });
   
   // Function to add a user to the users array
-  let users = [];
-  const addUser = (userId, socketId) => {
+let users = [];
+const addUser = (userId, socketId) => {
     // Check if the user is already present in the array, and add the user if not
     !users.some((user) => user.userId === userId) &&
-      users.push({ userId, socketId });
+      users.push({ ...userId, socketId });
   };
   
   // Function to remove a user from the users array
